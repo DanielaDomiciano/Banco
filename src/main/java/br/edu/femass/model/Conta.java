@@ -1,9 +1,12 @@
 package br.edu.femass.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@JsonIgnoreProperties("historico")
 public class Conta {
 
     private Long numero;
@@ -11,6 +14,10 @@ public class Conta {
     private Double especial;
     private List<Historico> historicos;
     private static Long proximoNumero = 1L;
+
+    public Conta(){
+
+    }
 
     public Conta(Double especial) {
         this.numero = proximoNumero;
